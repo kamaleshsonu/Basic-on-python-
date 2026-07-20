@@ -1,0 +1,17 @@
+| Command                                            | Purpose                                                 |
+| -------------------------------------------------- | ------------------------------------------------------- |
+| `git --version`                                    | Check if Git is installed and display its version.      |
+| `git config --global user.name "Your Name"`        | Configure your Git username globally.                   |
+| `git config --global user.email "you@example.com"` | Configure your Git email globally.                      |
+| `git config --list`                                | View all Git configuration settings.                    |
+| `git clone <repository-url>`                       | Copy (clone) a GitHub repository to your local machine. |
+| `git status`                                       | Show the current status of your repository.             |
+| `git add <filename>`                               | Stage a specific file.                                  |
+| `git add .`                                        | Stage all modified and new files.                       |
+| `git commit -m "message"`                          | Create a commit with a message.                         |
+| `git push origin main`                             | Push local commits to the `main` branch on GitHub.      |
+| `git init`                                         | Initialize a new Git repository.                        |
+| `git remote add origin <repository-url>`           | Connect a local repository to a GitHub repository.      |
+| `git remote -v`                                    | Show the configured remote repositories.                |
+| `git branch`                                       | Display all local branches.                             |
+| `git branch -M main`                               | Rename the current branch to `main`.                    |
