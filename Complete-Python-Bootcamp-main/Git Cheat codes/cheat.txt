@@ -19,6 +19,6 @@ cd project
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin <repo-url>
+git remote add origin  https://github.com/kamaleshsonu/Project-.git    (example)
 git branch -M main
 git push origin main
