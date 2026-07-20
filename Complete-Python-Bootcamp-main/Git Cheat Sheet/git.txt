@@ -1,0 +1,20 @@
+# Check changes
+git status
+
+# Stage changes
+git add .
+
+# Save changes locally
+git commit -m "Describe your changes for future refrence "
+
+# Upload to GitHub
+git push
+
+
+First-time setup (only once per repository)
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+git push -u origin main
