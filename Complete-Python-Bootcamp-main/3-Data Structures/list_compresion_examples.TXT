@@ -1,0 +1,184 @@
+What is List Comprehension?
+
+Instead of writing:
+
+numbers = []
+
+for i in range(5):
+    numbers.append(i)
+
+print(numbers)
+
+You can write:
+
+numbers = [i for i in range(5)]
+
+print(numbers)
+
+Output
+
+[0, 1, 2, 3, 4]
+
+Same result.
+
+Much shorter.
+
+Example 1: Reading Documents (RAG)
+
+Suppose you have
+
+documents = [
+    "AI.pdf",
+    "Python.pdf",
+    "LangGraph.pdf"
+]
+
+Traditional
+
+paths = []
+
+for doc in documents:
+    paths.append("docs/" + doc)
+
+List Comprehension
+
+paths = ["docs/" + doc for doc in documents]
+
+Output
+
+[
+ "docs/AI.pdf",
+ "docs/Python.pdf",
+ "docs/LangGraph.pdf"
+]
+Example 2: Embeddings
+
+Suppose your AI creates embeddings.
+
+Traditional
+
+embeddings = []
+
+for doc in documents:
+    embeddings.append(create_embedding(doc))
+
+List Comprehension
+
+embeddings = [create_embedding(doc) for doc in documents]
+
+This style is very common in AI projects.
+
+Example 3: Processing Images
+
+Traditional
+
+images = []
+
+for file in image_files:
+    images.append(load_image(file))
+
+List Comprehension
+
+images = [load_image(file) for file in image_files]
+Example 4: Calling an LLM
+
+Traditional
+
+responses = []
+
+for question in questions:
+    responses.append(llm.invoke(question))
+
+List Comprehension
+
+responses = [llm.invoke(question) for question in questions]
+Example 5: Filtering Data
+
+Suppose your chatbot only wants PDF files.
+
+Traditional
+
+pdfs = []
+
+for file in files:
+    if file.endswith(".pdf"):
+        pdfs.append(file)
+
+List Comprehension
+
+pdfs = [
+    file
+    for file in files
+    if file.endswith(".pdf")
+]
+Example 6: Hugging Face Dataset
+texts = [
+    sample["text"]
+    for sample in dataset
+]
+
+You'll see code like this often.
+
+Example 7: LangChain
+chunks = [
+    splitter.split_text(doc)
+    for doc in documents
+]
+
+Very common.
+
+Example 8: AI Agents
+tool_results = [
+    tool.run(query)
+    for tool in tools
+]
+Why AI Engineers Use It
+
+Imagine processing
+
+500 PDFs
+
+1000 Images
+
+10000 Rows
+
+500 Prompts
+
+300 Documents
+
+List comprehension makes the code shorter and easier to read.
+
+Instead of
+
+results = []
+
+for item in items:
+
+    results.append(process(item))
+
+You simply write
+
+results = [
+    process(item)
+    for item in items
+]
+Should You Always Use It?
+
+No.
+
+Good use
+numbers = [i*i for i in range(10)]
+
+Easy to read.
+
+Bad use
+result = [
+    calculate_score(
+        preprocess(clean(text)),
+        model.predict(vectorize(text))
+    )
+    for text in documents
+    if validate(text)
+]
+
+This is harder to understand. In such cases, a normal for loop is often clearer.
