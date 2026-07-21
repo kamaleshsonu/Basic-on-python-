@@ -1,0 +1,366 @@
+Example 1: for Loop – Processing Multiple Documents (RAG Project)
+
+Imagine you're building a chatbot that answers questions from PDF files.
+
+Your project folder:
+
+documents/
+│── ai.pdf
+│── python.pdf
+│── langgraph.pdf
+│── fastapi.pdf
+
+You need to read every PDF.
+
+documents = [
+    "ai.pdf",
+    "python.pdf",
+    "langgraph.pdf",
+    "fastapi.pdf"
+]
+
+for i in documents:
+    print(f"Reading {i}")
+
+Output
+
+Reading ai.pdf
+Reading python.pdf
+Reading langgraph.pdf
+Reading fastapi.pdf
+What's happening?
+
+The loop processes one document at a time.
+
+Iteration 1 → ai.pdf
+Iteration 2 → python.pdf
+Iteration 3 → langgraph.pdf
+Iteration 4 → fastapi.pdf
+
+This is exactly how RAG systems process multiple documents.
+
+Example 2: range() – Generating Multiple API Requests
+
+Suppose you want to ask an LLM five questions.
+
+for i in range(5):
+    print(f"Sending Prompt {i}")
+
+Output
+
+Sending Prompt 0
+Sending Prompt 1
+Sending Prompt 2
+Sending Prompt 3
+Sending Prompt 4
+
+Now imagine replacing print() with an API call.
+
+for i in range(5):
+    response = llm.invoke(prompts[i])
+
+The loop sends five requests to the model.
+
+Example 3: AI Training (Epochs)
+
+Machine learning models don't learn in one pass.
+
+They repeat the training process many times.
+
+epochs = 10
+
+for epoch in range(epochs):
+
+    print(f"Training Epoch {epoch+1}")
+
+Output
+
+Training Epoch 1
+Training Epoch 2
+...
+Training Epoch 10
+
+Real training code looks similar.
+
+for epoch in range(10):
+
+    train_model()
+
+    calculate_loss()
+
+    save_weights()
+
+This is how PyTorch and TensorFlow training loops work.
+
+Example 4: Reading Images
+
+Suppose you have
+
+dataset/
+
+cat1.jpg
+cat2.jpg
+cat3.jpg
+dog1.jpg
+dog2.jpg
+
+You process every image.
+
+images = [
+    "cat1.jpg",
+    "cat2.jpg",
+    "cat3.jpg",
+    "dog1.jpg",
+    "dog2.jpg"
+]
+
+for image in images:
+
+    print(f"Processing {image}")
+
+Real AI code would look like
+
+
+images = [
+    "cat1.jpg",
+    "cat2.jpg",
+    "cat3.jpg",
+    "dog1.jpg",
+    "dog2.jpg"
+]
+
+
+for i in images:
+
+    img = load_image(i)
+
+    prediction = model.predict(img)
+
+    print(prediction)
+Example 5: Agent Calling Multiple Tools
+
+Suppose your AI agent has tools.
+
+Weather Tool
+
+Flight Tool
+
+Hotel Tool
+
+Maps Tool
+
+The agent executes them one after another.
+
+tools = [
+    "Weather",
+    "Flight",
+    "Hotel",
+    "Maps"
+]
+
+for i in tools:
+
+    print(f"Executing {i}")
+Now let's understand while
+
+while is different.
+
+You don't know when the loop will end.
+
+Example 1: Waiting for User Input
+
+Imagine ChatGPT asking:
+
+Ask your question:
+
+If the user doesn't type anything,
+
+ChatGPT keeps waiting.
+
+question = ""
+
+while question == "":
+
+    question = input("Ask something: ")
+
+The loop stops only when the user types something.
+
+Example 2: Login System
+password = ""
+
+while password != "admin123":
+
+    password = input("Enter Password: ")
+
+User enters
+
+abc
+
+Wrong.
+
+Again
+
+123
+
+Wrong.
+
+Again
+
+admin123
+
+Correct.
+
+Loop ends.
+
+Example 3: AI Agent Waiting for Approval
+
+Imagine an AI travel planner.
+
+It creates an itinerary.
+
+Trip Ready
+
+Approve?
+
+yes / no
+approval = ""
+
+while approval != "yes":
+
+    approval = input("Approve? ")
+
+Only when the user types
+
+yes
+
+does the workflow continue.
+
+Example 4: Polling an API
+
+Suppose you're generating an image.
+
+It takes time.
+
+Generating...
+
+Still Generating...
+
+Still Generating...
+
+Completed
+
+Python code
+
+status = "processing"
+
+while status != "completed":
+
+    status = check_status()
+
+print("Download Image")
+
+This is common in AI APIs that run asynchronously.
+
+Example 5: Conversation Loop (ChatGPT)
+
+A chatbot keeps talking until the user exits.
+
+while True:
+
+    question = input("You: ")
+
+    if question == "exit":
+        break
+
+    answer = llm.invoke(question)
+
+    print(answer)
+
+Conversation
+
+You: Hi
+
+Bot: Hello
+
+You: Tell me about AI
+
+Bot: AI stands for...
+
+You: Explain RAG
+
+Bot: ...
+
+You: exit
+
+Conversation ends.
+
+This is how many chat applications are structured.
+
+for vs while in AI
+for
+
+You already know how many items you have.
+
+100 PDFs
+
+500 Images
+
+10 Epochs
+
+50 Prompts
+
+20 CSV Rows
+
+Python
+
+for item in data:
+while
+
+You don't know when it will stop.
+
+Wait for user input
+
+Wait for image generation
+
+Wait for payment confirmation
+
+Wait for API response
+
+Wait for approval
+
+Python
+
+while condition:
+range()
+
+range() is simply a way to generate a sequence of numbers, often used to repeat an action a fixed number of times.
+
+for i in range(5):
+    print("Training Model")
+
+Output
+
+Training Model
+Training Model
+Training Model
+Training Model
+Training Model
+
+Think of range() as saying:
+
+"Repeat this task exactly N times."
+
+Where you'll use them in your AI Engineer journey
+Project	for	while	range()
+RAG	Read every document	Wait for user query	Chunk documents
+LangGraph	Execute workflow steps	Wait for approval	Retry limited times
+FastAPI	Process uploaded files	Wait for background task	Loop through results
+PyTorch	Process every training batch	Early stopping conditions	Train for N epochs
+AI Agents	Run tools one by one	Continue conversation	Retry tool calls
+LLM Apps	Process prompts	Chat until user exits	Generate multiple outputs
+A simple rule to remember
+for → "I know what I need to process (a list of items)."
+range() → "I know how many times I want to repeat something."
+while → "I don't know when I'll be finished; I'll stop only when a condition changes."
+
+If you keep these three questions in mind, choosing between for, range(), and while becomes much more intuitive in real AI projects.
