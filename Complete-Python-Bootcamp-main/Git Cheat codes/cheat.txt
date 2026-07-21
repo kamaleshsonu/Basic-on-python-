@@ -1,4 +1,9 @@
 ## Setting up the env
+-----important things to remeber= make sure the data is saved ever time in the app.py / test.ipnb . 
+## Important points
+
+
+
 
 conda create -p venv python==3.12 
 conda activate C:\Users\ADMIN\Desktop\Python\venv 
