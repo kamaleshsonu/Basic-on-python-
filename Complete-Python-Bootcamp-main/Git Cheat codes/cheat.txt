@@ -1,3 +1,10 @@
+## Setting up the env
+
+conda create -p venv python==3.12 
+conda activate C:\Users\ADMIN\Desktop\Python\venv 
+pip install ipykernel
+
+
 #For adding or deleting the workflow # 
 
 git clone https://github.com/kamaleshsonu/Project-.git    (example)
