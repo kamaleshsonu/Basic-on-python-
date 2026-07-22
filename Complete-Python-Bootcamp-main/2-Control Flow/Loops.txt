@@ -41,6 +41,8 @@ This is exactly how RAG systems process multiple documents.
 
 Example 2: range() – Generating Multiple API Requests
 
+--------------------------------------------------------------------------
+
 Suppose you want to ask an LLM five questions.
 
 for i in range(5):
@@ -60,6 +62,9 @@ for i in range(5):
     response = llm.invoke(prompts[i])
 
 The loop sends five requests to the model.
+
+
+-------------------------------------------------------------------------------
 
 Example 3: AI Training (Epochs)
 
@@ -91,6 +96,8 @@ for epoch in range(10):
     save_weights()
 
 This is how PyTorch and TensorFlow training loops work.
+
+---------------------------------------------------------------------------------------------------
 
 Example 4: Reading Images
 
@@ -137,6 +144,9 @@ for i in images:
     prediction = model.predict(img)
 
     print(prediction)
+
+-----------------------------------------------------------------------------------------
+
 Example 5: Agent Calling Multiple Tools
 
 Suppose your AI agent has tools.
@@ -161,11 +171,16 @@ tools = [
 for i in tools:
 
     print(f"Executing {i}")
+
+--------------------------------------------------------------------------------------------------------
+
 Now let's understand while
 
 while is different.
 
 You don't know when the loop will end.
+
+---------------------------------------------------------------------------
 
 Example 1: Waiting for User Input
 
@@ -184,6 +199,8 @@ while question == "":
     question = input("Ask something: ")
 
 The loop stops only when the user types something.
+
+--------------------------------------------------------------------------------
 
 Example 2: Login System
 password = ""
@@ -211,6 +228,7 @@ admin123
 Correct.
 
 Loop ends.
+------------------------------------------------------------------------------
 
 Example 3: AI Agent Waiting for Approval
 
@@ -234,6 +252,7 @@ Only when the user types
 yes
 
 does the workflow continue.
+----------------------------------------------------------
 
 Example 4: Polling an API
 
@@ -260,6 +279,8 @@ while status != "completed":
 print("Download Image")
 
 This is common in AI APIs that run asynchronously.
+
+----------------------------------------------------------------------------------------
 
 Example 5: Conversation Loop (ChatGPT)
 
@@ -296,6 +317,7 @@ Conversation ends.
 
 This is how many chat applications are structured.
 
+**********************************************************************************************
 for vs while in AI
 for
 
@@ -330,6 +352,8 @@ Wait for approval
 
 Python
 
+---------------------------------------------------------------------------------------
+
 while condition:
 range()
 
@@ -363,4 +387,9 @@ for → "I know what I need to process (a list of items)."
 range() → "I know how many times I want to repeat something."
 while → "I don't know when I'll be finished; I'll stop only when a condition changes."
 
-If you keep these three questions in mind, choosing between for, range(), and while becomes much more intuitive in real AI projects.
+Very Important: 
+
+
+%%If you keep these three questions in mind, 
+choosing between for, range(), 
+and while becomes much more intuitive in real AI projects.
