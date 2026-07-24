@@ -1,0 +1,111 @@
+Here's how to create the project.
+
+Step 1: Create a project folder
+
+Open VS CODE;
+
+cd Desktop
+mkdir my-first-project (name of the project)
+
+cd my-first-project (now you are in this folder in mean you path)
+ 
+-------------------------------------------------------------------------------------------------------------
+
+Step 2: Initialize a uv project
+
+Run:
+
+uv init
+
+You'll get something like:
+
+Initialized project `my-first-project`
+
+Your folder will now look like:
+
+my-first-project/
+│
+├── .python-version
+├── main.py
+├── pyproject.toml
+└── README.md
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+Step 3:  VS Code
+
+
+Now you'll see:
+
+my-first-project
+│
+├── .python-version
+├── main.py
+├── pyproject.toml
+└── README.md
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Step 4: Create the virtual environment 
+
+Run:
+
+uv venv
+
+This creates:
+
+.venv/
+
+
+-----------------------------------------------------------------------------------------------------------------
+Step 5: Activate it
+
+For Command Prompt:
+
+.venv\Scripts\activate
+
+You'll see:
+
+(.venv) C:\Users\ADMIN\Desktop\my-first-project>
+
+------------------------------------------------------------------------------------------------------------------
+Step 6: Install packages
+
+For example:
+
+uv add requests
+
+or
+
+uv add openai
+
+pyproject.toml will automatically update.
+
+For example:
+
+[project]
+name = "my-first-project"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+dependencies = [
+    "requests",
+]
+
+----------------------------------------------------------------------------------------------------------------------
+
+Step 7: Run your program
+
+If main.py contains:
+
+print("Hello AI Engineer!")
+
+Run:
+
+python main.py
+
+Output:
+
+Hello AI Engineer!
