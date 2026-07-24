@@ -1,0 +1,243 @@
+1. What is the difference between a Module and a Package?
+Answer
+
+A module is a single Python file (.py) containing Python code such as functions, classes, and variables.
+
+A package is a directory (folder) that contains multiple related modules, helping organize larger applications.
+
+Example
+
+Module
+
+maths.py
+def add(a, b):
+    return a + b
+
+Package
+
+calculator/
+│
+├── __init__.py
+├── maths.py
+├── statistics.py
+└── geometry.py
+
+The calculator folder is a package because it contains multiple modules.
+
+AI Example
+chatbot/
+│
+├── llm.py
+├── prompts.py
+├── memory.py
+└── tools.py
+
+Here:
+
+llm.py → Module
+chatbot/ → Package
+2. Why do we use import?
+Answer
+
+The import statement allows us to reuse existing code from built-in modules, third-party libraries, or our own modules instead of rewriting the same functionality.
+
+Example
+import math
+
+print(math.sqrt(25))
+
+Instead of writing the square root algorithm ourselves, we use Python's built-in implementation.
+
+AI Example
+from langchain.chat_models import ChatOpenAI
+
+Instead of building an LLM from scratch, we import LangChain's implementation.
+
+3. What is the purpose of __init__.py?
+Answer
+
+__init__.py tells Python that a directory should be treated as a package. It also runs initialization code when the package is imported.
+
+Example
+myproject/
+│
+└── utils/
+      ├── __init__.py
+      ├── helper.py
+      └── logger.py
+
+Now we can write
+
+from utils.helper import greet
+
+Without __init__.py, Python traditionally would not recognize the folder as a package (although modern Python has namespace packages, many projects still include __init__.py).
+
+AI Example
+agents/
+    __init__.py
+    planner.py
+    researcher.py
+4. What does import numpy as np mean?
+Answer
+
+It imports the NumPy library and gives it the alias np.
+
+Instead of writing
+
+numpy.array()
+
+we write
+
+np.array()
+Example
+import numpy as np
+
+arr = np.array([1,2,3])
+Why use aliases?
+Shorter
+Easier to read
+Standard practice
+
+Most Python developers immediately recognize np as NumPy.
+
+5. Difference between
+a)
+import math
+
+Imports the entire module.
+
+Use functions like
+
+math.sqrt(16)
+math.pi
+b)
+from math import sqrt
+
+Imports only the sqrt() function.
+
+Now you can write
+
+sqrt(16)
+
+instead of
+
+math.sqrt(16)
+c)
+from math import *
+
+Imports everything from the module.
+
+sqrt(16)
+pi
+sin(30)
+Interview Note
+
+Avoid
+
+from math import *
+
+because it pollutes the namespace and can cause name conflicts. It is generally discouraged in production code.
+
+Comparison Table
+Statement	Imports	Usage
+import math	Entire module	math.sqrt()
+from math import sqrt	Only one function	sqrt()
+from math import *	Everything	sqrt(), pi, sin()
+6. How do you install a package using pip?
+Answer
+
+Install a single package:
+
+pip install numpy
+
+Install multiple packages:
+
+pip install -r requirements.txt
+
+Upgrade a package:
+
+pip install --upgrade numpy
+
+Check installed packages:
+
+pip list
+7. How do you create your own Python package?
+Step 1
+
+Create a folder
+
+calculator/
+Step 2
+
+Add
+
+__init__.py
+Step 3
+
+Create module
+
+maths.py
+def add(a,b):
+    return a+b
+Step 4
+
+Use it
+
+from calculator.maths import add
+
+print(add(2,3))
+
+Output
+
+5
+Real AI Example
+RAG_Project/
+
+rag/
+    __init__.py
+    loader.py
+    splitter.py
+    embedding.py
+    retriever.py
+
+main.py
+
+Then
+
+from rag.loader import load_documents
+8. What is the purpose of requirements.txt?
+Answer
+
+requirements.txt stores all the Python packages and their versions required by a project.
+
+This ensures everyone working on the project installs the same dependencies.
+
+Example
+numpy==2.3.1
+pandas==2.2.2
+langchain==0.3.30
+fastapi==0.116.1
+openai==1.107.1
+
+Install everything:
+
+pip install -r requirements.txt
+
+Generate the file:
+
+pip freeze > requirements.txt
+AI Example
+
+If you share your AI project on GitHub, another developer can run:
+
+pip install -r requirements.txt
+
+and get the exact environment needed to run your project.
+
+Interview Tip (What to Say)
+
+If an interviewer asks "Why are modules and packages important?", a strong answer is:
+
+"Modules and packages improve code reusability, organization, and maintainability. In AI projects like LangChain, FastAPI, or RAG systems, different functionalities such as data loading, embeddings, retrieval, and API endpoints are separated into modules and packages, making the application easier to develop, test, and scale."
+
+This answer demonstrates that you understand both the Python concepts and how they're applied in real-world AI engineering.

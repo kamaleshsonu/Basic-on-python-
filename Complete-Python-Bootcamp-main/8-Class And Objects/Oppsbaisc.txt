@@ -1,0 +1,265 @@
+Pattern 1: LLM Model
+class LLM:
+    def __init__(self, model_name):
+        self.model_name = model_name
+
+    def generate(self, prompt):
+        print(f"{self.model_name} generated: {prompt}")
+Object Creation
+llm = LLM("gpt-4o")
+llm.generate("Explain AI")
+
+Behind the scenes
+
+model_name (parameter)
+        │
+        ▼
+"gpt-4o"
+        │
+        ▼
+self.model_name
+
+------------------------------------------------------------------------------------------------------------------------
+
+Pattern 2: Embedding Model
+class EmbeddingModel:
+    def __init__(self, embedding_model):
+        self.embedding_model = embedding_model
+
+    def embed(self, text):
+        print(f"Embedding '{text}' using {self.embedding_model}")
+
+Usage
+
+embedder = EmbeddingModel("text-embedding-3-large")
+embedder.embed("Artificial Intelligence")
+
+------------------------------------------------------------------------------------------------------------------------
+
+Pattern 3: Vector Database
+class VectorDB:
+    def __init__(self, db_name):
+        self.db_name = db_name
+
+    def store(self, document):
+        print(f"Stored '{document}' in {self.db_name}")
+
+Usage
+
+db = VectorDB("Pinecone")
+db.store("Python Notes")
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Pattern 3: Vector Database
+class VectorDB:
+    def __init__(self, db_name):
+        self.db_name = db_name
+
+    def store(self, document):
+        print(f"Stored '{document}' in {self.db_name}")
+
+Usage
+
+db = VectorDB("Pinecone")
+db.store("Python Notes")
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Pattern 4: AI Agent
+class AIAgent:
+    def __init__(self, agent_name):
+        self.agent_name = agent_name
+
+    def think(self):
+        print(f"{self.agent_name} is thinking...")
+
+Usage
+
+agent = AIAgent("Research Agent")
+agent.think()
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+Pattern 5: Prompt Template
+class PromptTemplate:
+    def __init__(self, template):
+        self.template = template
+
+    def format(self, question):
+        print(self.template.replace("{question}", question))
+
+Usage
+
+prompt = PromptTemplate("Answer this: {question}")
+prompt.format("What is AI?")
+
+------------------------------------------------------------------------------------------------------------------------
+
+Pattern 6: RAG Retriever
+class Retriever:
+    def __init__(self, top_k):
+        self.top_k = top_k
+
+    def retrieve(self):
+        print(f"Retrieving top {self.top_k} documents")
+
+Usage
+
+retriever = Retriever(5)
+retriever.retrieve()
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Pattern 7: Chat Memory
+class ChatMemory:
+    def __init__(self, memory_size):
+        self.memory_size = memory_size
+
+    def show(self):
+        print(f"Memory can store {self.memory_size} conversations")
+
+Usage
+
+memory = ChatMemory(10)
+memory.show()
+
+------------------------------------------------------------------------------------------------------------------------
+
+Pattern 8: FastAPI Service
+class APIService:
+    def __init__(self, port):
+        self.port = port
+
+    def start(self):
+        print(f"Running on port {self.port}")
+
+Usage
+
+api = APIService(8000)
+api.start()
+
+------------------------------------------------------------------------------------------------------------------------
+
+Pattern 9: Machine Learning Model
+class MLModel:
+    def __init__(self, algorithm):
+        self.algorithm = algorithm
+
+    def train(self):
+        print(f"Training {self.algorithm}")
+      
+
+Usage
+
+model = MLModel("Random Forest")
+model.train()
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+Pattern 10: Dataset
+class Dataset:
+    def __init__(self, file_path):
+        self.file_path = file_path
+
+    def load(self):
+        print(f"Loading {self.file_path}")
+
+Usage
+
+dataset = Dataset("train.csv")
+dataset.load()
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Pattern 11: GPU Configuration
+class GPU:
+    def __init__(self, device):
+        self.device = device
+
+    def info(self):
+        print(f"Running on {self.device}")
+
+Usage
+
+gpu = GPU("cuda")
+gpu.info()
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Pattern 12: LangGraph Node
+class GraphNode:
+    def __init__(self, node_name):
+        self.node_name = node_name
+
+    def execute(self):
+        print(f"Executing {self.node_name}")
+
+Usage
+
+node = GraphNode("Search Node")
+node.execute()
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+Pattern 13: AI Tool
+class Tool:
+    def __init__(self, tool_name):
+        self.tool_name = tool_name
+
+    def run(self):
+        print(f"Running {self.tool_name}")
+
+Usage
+
+tool = Tool("Calculator")
+tool.run()
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Pattern 14: Multi-Agent System
+class Agent:
+    def __init__(self, role):
+        self.role = role
+
+    def work(self):
+        print(f"{self.role} is working")
+
+Usage
+
+planner = Agent("Planner")
+coder = Agent("Coder")
+reviewer = Agent("Reviewer")
+
+planner.work()
+coder.work()
+reviewer.work()
+
+
+------------------------------------------------------------------------------------------------------------------------
+Pattern 15: Document Loader
+class DocumentLoader:
+    def __init__(self, folder_path):
+        self.folder_path = folder_path
+
+    def load_documents(self):
+        print(f"Loading documents from {self.folder_path}")
+
+Usage
+
+loader = DocumentLoader("./documents")
+loader.load_documents()
