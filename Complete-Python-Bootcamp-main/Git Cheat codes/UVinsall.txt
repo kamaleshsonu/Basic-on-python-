@@ -1,25 +1,155 @@
-Here's how to create the project.
+A **professional setup guide** that you can use for every project.
 
---------------------------------------------------------------
-mkdir 1-BASICS-OF-LANGCHAIN 
+---
+
+# 🚀 AI Project Setup Guide (Windows + UV + VS Code)
+
+---
+
+# Step 1: Create the Project Folder
+
+```cmd
+mkdir 1-BASICS-OF-LANGCHAIN
 cd 1-BASICS-OF-LANGCHAIN
+```
 
-(make sure you are in 
- cd 1-BASICS-OF-LANGCHAIN)
+Verify your location:
 
---------------------------------------------------------------
+```cmd
+cd
+```
+
+Expected:
+
+```text
+F:\AI learnings 2026\langchain-Proejcts\1-BASICS-OF-LANGCHAIN
+```
+
+---
+
+# Step 2: Initialize the UV Project
+
+```cmd
 uv init
--------------------------------------------------------------- 
-uv venv --python 3.12
---------------------------------------------------------------
-.venv\Scripts\activate
---------------------------------------------------------------
-requirements.txt  
+```
 
-(check ones you are in 1-BASICS-OF-LANGCHAIN))
---------------------------------------------------------------
-type requirements.txt
---------------------------------------------------------------
+This creates:
+
+```
+pyproject.toml
+README.md
+main.py
+.python-version
+```
+
+---
+
+# Step 3: Create the Virtual Environment
+
+Use Python 3.12.
+
+```cmd
+uv venv --python 3.12
+```
+
+If your PC blocks UV-managed Python  use:
+
+```cmd
+uv venv --python "C:\Users\ADMIN\AppData\Local\Programs\Python\Python312\python.exe"
+```
+
+---
+
+# Step 4: Activate the Virtual Environment
+
+```cmd
+.venv\Scripts\activate
+```
+
+Expected:
+
+```text
+(.venv)
+```
+
+---
+
+# Step 5: Verify the Environment
+
+```cmd
+python --version
+```
+
+Expected:
+
+```text
+Python 3.12.x
+```
+
+Check the interpreter:
+
+```cmd
+where python
+```
+
+Expected:
+
+```text
+...\1-BASICS-OF-LANGCHAIN\.venv\Scripts\python.exe
+```
+
+---
+
+# Step 6: Create requirements.txt
+
+```cmd
+type nul > requirements.txt
+```
+
+or in VS Code:
+
+* Right-click project
+* **New File**
+* Name it:
+
+```
+requirements.txt
+```
+
+---
+
+# Step 7: Add Required Packages
+
+Open `requirements.txt` and add:
+
+```text
+langchain
+langchain-community
+langchain-openai
+python-dotenv
+ipykernel
+openai
+```
+
+Save the file.
+
+---
+
+# Step 8: Install Packages
+
+```cmd
+uv add -r requirements.txt
+```
+
+or install individually:
+
+```cmd
+uv add langchain
+uv add langchain-community
+uv add langchain-openai
+uv add python-dotenv
+uv add ipykernel
+uv add openai
 langchain
 python-dotenv
 ipykernel
@@ -52,19 +182,279 @@ unstructured
 pytube
 numexpr
 huggingface_hub
+```
 
-(SAVE )
---------------------------------------------------------------
-uv add -r requirements.txt
---------------------------------------------------------------
-######    Muliple folders  
---------------------------------------------------------------
-mkdir 1.1-openai
-mkdir 1.2-ollama
-mkdir 3.2-DataIngestion
-mkdir 3.3-DataTransformer
-mkdir 4-Embeddings
-mkdir 5-VectorStore
+---
 
-check if you dowloaded python =3.12 and then try to install it 
+# Step 9: Create the .env File
+
+### Using VS Code
+
+Right-click the project
+
+➡️ **New File**
+
+Name it:
+
+```
+.env
+```
+
+or using CMD:
+
+```cmd
+type nul > .env
+```
+
+---
+
+# Step 10: Add API Keys
+
+```env
+OPENAI_API_KEY=your_openai_key
+
+GROQ_API_KEY=your_groq_key
+
+LANGCHAIN_API_KEY=your_langsmith_key
+
+LANGCHAIN_TRACING_V2=true
+
+LANGCHAIN_PROJECT=1-BASICS-OF-LANGCHAIN
+```
+
+---
+
+# Step 11: Register the Jupyter Kernel
+
+```cmd
+python -m ipykernel install --user --name=1-BASICS --display-name="Python (.venv)"
+```
+
+Expected:
+
+```text
+Installed kernelspec
+```
+
+---
+
+# Step 12: Open VS Code
+
+Open only this folder:
+
+```
+1-BASICS-OF-LANGCHAIN
+```
+
+---
+
+# Step 13: Select Python Interpreter
+
+```
+Ctrl + Shift + P
+```
+
+Type:
+
+```
+Python: Select Interpreter
+```
+
+Choose
+
+```
+.venv (Python 3.12)
+```
+
+---
+
+# Step 14: Create a Notebook
+
+Create
+
+```
+test.ipynb
+```
+
+---
+
+# Step 15: Select the Notebook Kernel
+
+Top-right
+
+```
+Select Kernel
+```
+
+Choose
+
+```
+Python (.venv)
+```
+
+---
+
+# Step 16: Verify Everything
+
+### Test Python
+
+```python
+print("Hello AI Engineer")
+```
+
+---
+
+### Verify Interpreter
+
+```python
+import sys
+
+print(sys.executable)
+```
+
+Expected:
+
+```
+...\1-BASICS-OF-LANGCHAIN\.venv\Scripts\python.exe
+```
+
+---
+
+### Verify LangChain
+
+```python
+import langchain
+
+print(langchain.__version__)
+```
+
+---
+
+### Verify OpenAI
+
+```python
+import openai
+
+print(openai.__version__)
+```
+
+---
+
+### Verify dotenv
+
+```python
+from dotenv import load_dotenv
+
+print("dotenv working")
+```
+
+---
+
+# Step 17: Load Environment Variables
+
+```python
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+print(os.getenv("OPENAI_API_KEY"))
+```
+
+---
+
+# Step 18: Create Your Folder Structure
+
+```
+1-BASICS-OF-LANGCHAIN
+│
+├── .venv/
+├── .env
+├── pyproject.toml
+├── uv.lock
+├── README.md
+├── requirements.txt
+├── main.py
+├── test.ipynb
+│
+├── 1.1-openai/
+├── 1.2-ollama/
+├── 3.2-DataIngestion/
+├── 3.3-DataTransformer/
+├── 4-Embeddings/
+├── 5-VectorStore/
+│
+├── data/
+├── output/
+└── notebooks/
+```
+
+---
+
+# Step 19: Create .gitignore
+
+Create a file named:
+
+```
+.gitignore
+```
+
+Add:
+
+```text
+.venv/
+.env
+__pycache__/
+.ipynb_checkpoints/
+```
+
+---
+
+# Step 20: Export requirements (Optional)
+
+If someone needs a `requirements.txt` generated from your UV project:
+
+```cmd
+uv export --format requirements-txt -o requirements.txt
+```
+
+---
+
+# Daily Workflow
+
+```cmd
+cd 1-BASICS-OF-LANGCHAIN
+
+.venv\Scripts\activate
+
+code .
+```
+
+Run the notebook and start coding.
+
+---
+
+# New Project Checklist ✅
+
+```
+☐ Create Project Folder
+☐ uv init
+☐ uv venv --python 3.12
+☐ Activate .venv
+☐ Verify Python Version
+☐ Create requirements.txt
+☐ Install Packages
+☐ Create .env
+☐ Add API Keys
+☐ Register ipykernel
+☐ Open VS Code
+☐ Select Interpreter
+☐ Select Notebook Kernel
+☐ Test LangChain
+☐ Start Coding
+```
+
+---
+
 
