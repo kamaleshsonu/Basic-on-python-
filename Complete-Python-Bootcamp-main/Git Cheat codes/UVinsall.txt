@@ -138,7 +138,10 @@ Save the file.
 # Step 8: Install Packages
 
 ```cmd
-uv add -r requirements.txt
+uv add -r requirements.txt 
+         or
+uv pip install -r req.txt 
+
 ```
 
 or install individually:
