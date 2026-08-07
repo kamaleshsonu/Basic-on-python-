@@ -147,12 +147,18 @@ uv pip install -r req.txt
 or install individually:
 
 ```cmd
-uv add langchain
-uv add langchain-community
-uv add langchain-openai
-uv add python-dotenv
-uv add ipykernel
-uv add openai
+
+
+
+
+
+
+ipykernel
+langchain
+langchain-community
+python-dotenv
+ipykernel
+openai
 langchain
 python-dotenv
 ipykernel
@@ -185,6 +191,18 @@ unstructured
 pytube
 numexpr
 huggingface_hub
+streamlit
+
+
+
+
+
+
+
+
+
+
+
 ```
 
 ---
