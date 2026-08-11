@@ -116,6 +116,16 @@ or in VS Code:
 requirements.txt
 ```
 
+#uv add -r requirements.txt 
+
+#streamlit run serve.py 
+#python -m streamlit run serve.py
+
+
+
+
+
+
 ---
 
 # Step 7: Add Required Packages
