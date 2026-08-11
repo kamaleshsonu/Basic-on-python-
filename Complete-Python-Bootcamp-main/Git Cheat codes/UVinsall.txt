@@ -226,7 +226,14 @@ or using CMD:
 ```cmd
 type nul > .env
 ```
+#uv add -r requirements.txt 
 
+#streamlit run serve.py 
+
+
+
+
+python -m streamlit run serve.py
 ---
 
 # Step 10: Add API Keys
